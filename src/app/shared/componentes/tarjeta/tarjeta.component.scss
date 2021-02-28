@@ -7,18 +7,6 @@
   height: 60px;
 }
 
-.alinear_centro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.alinear_inicio {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .botones_votacion {
   padding: 1em;
 }

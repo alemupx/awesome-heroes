@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { VotacionesService } from '../../services/votaciones.service';
 
 @Component({
   selector: 'app-tarjeta',
@@ -13,53 +14,45 @@ export class TarjetaComponent implements OnInit {
   @Input() tarjetaRespuestaPositiva: boolean;
   @Input() tarjetaRespuestaNegativa: boolean;
 
-  contadorVotacionesPositivas: number;
-  contadorVotacionesNegativas: number;
-  constructor() {
+  constructor(private votaciones_service: VotacionesService) {
     this.tarjetaRespuestaPositiva = false;
     this.tarjetaRespuestaNegativa = false;
-    this.contadorVotacionesPositivas = 0;
-    this.contadorVotacionesNegativas = 0;
   }
 
   ngOnInit() {}
 
   votoPositivo() {
-    if (this.contadorVotacionesPositivas >= 0) {
+    if (this.votaciones_service.estadoVotos(true) >= 0.0) {
       if (this.tarjetaPc) {
         this.tarjetaPc = false;
         this.tarjetaRespuestaPositiva = true;
-        this.contadorVotacionesPositivas++;
+        this.votaciones_service.votoPositivo();
         this.anclaPc = true;
-        console.log('Votación Positivas: ', this.contadorVotacionesPositivas);
       }
 
       if (this.tarjetaMovil) {
         this.tarjetaMovil = false;
         this.tarjetaRespuestaPositiva = true;
-        this.contadorVotacionesPositivas++;
+        this.votaciones_service.votoPositivo();
         this.anclaMovil = true;
-        console.log('Votación Positivas: ', this.contadorVotacionesPositivas);
       }
     }
   }
 
   votoNegativo() {
-    if (this.contadorVotacionesNegativas >= 0) {
+    if (this.votaciones_service.estadoVotos(false) >= 0.0) {
       if (this.tarjetaPc) {
         this.tarjetaPc = false;
         this.tarjetaRespuestaNegativa = true;
-        this.contadorVotacionesNegativas++;
+        this.votaciones_service.votoNegativo();
         this.anclaPc = true;
-        console.log('Votación Positivas: ', this.contadorVotacionesNegativas);
       }
 
       if (this.tarjetaMovil) {
         this.tarjetaMovil = false;
         this.tarjetaRespuestaNegativa = true;
-        this.contadorVotacionesNegativas++;
+        this.votaciones_service.votoNegativo();
         this.anclaMovil = true;
-        console.log('Votación Positivas: ', this.contadorVotacionesNegativas);
       }
     }
   }

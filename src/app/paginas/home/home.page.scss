@@ -1,9 +1,13 @@
-#pc_container,
-#movil_container {
+.pc_container_bg,
+.movil_container_bg {
   background-image: url("../../../assets/img/tony.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#pc_container,
+#movil_container {
   display: flex;
   align-items: center;
 }

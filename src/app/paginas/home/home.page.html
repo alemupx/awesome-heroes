@@ -4,22 +4,24 @@
 
 
     <!-- Versión Pc -->
-    <div id="pc_container">
+    <div id="pc_container" class="pc_container_bg">
         <div id="container_item">
             <div style="display: flex; width: 450px; ">
-                <app-tarjeta tarjetaPc="true"></app-tarjeta>
+                <app-tarjeta [tarjetaPc]="true"></app-tarjeta>
             </div>
         </div>
     </div>
 
-    <div id="pc_container">
-        <div id="container_item">
-        </div>
-    </div>
+
+
     <!-- Versión Movil -->
 
-    <div id="movil_container">
-        <app-tarjeta tarjetaMovil="true"></app-tarjeta>
+    <div id="movil_container" class="movil_container_bg ion-padding">
+
+        <div>
+            <app-tarjeta [tarjetaMovil]="true"></app-tarjeta>
+        </div>
+
     </div>
 
 </ion-content>

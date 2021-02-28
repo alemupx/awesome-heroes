@@ -1,0 +1,48 @@
+#informacion_pc {
+  justify-content: flex-start;
+}
+
+#siguenos_pc {
+  justify-content: flex-end;
+}
+
+#maryl,
+#boton_movil {
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  #informacion_pc {
+    display: none;
+  }
+
+  #siguenos_pc {
+    display: none;
+  }
+
+  #boton_movil {
+    display: flex;
+  }
+
+  #maryl {
+    display: flex;
+  }
+}
+
+@media (min-width: 1200px) {
+  #informacion_pc {
+    display: flex;
+  }
+
+  #siguenos_pc {
+    display: flex;
+  }
+
+  #boton_movil {
+    display: none;
+  }
+
+  #maryl {
+    display: none;
+  }
+}

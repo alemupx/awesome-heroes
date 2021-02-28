@@ -1,0 +1,40 @@
+#pc_container,
+#movil_container {
+  background-image: url("../../../assets/img/tony.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+#pc_container {
+  height: 103%;
+}
+
+#movil_container {
+  height: 100%;
+}
+
+#container_item {
+  margin-left: 100px;
+}
+
+// Media Queries
+
+@media (min-width: 1200px) {
+  #pc_container {
+    display: flex;
+  }
+  #movil_container {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  #pc_container {
+    display: none;
+  }
+  #movil_container {
+    display: flex;
+  }
+}

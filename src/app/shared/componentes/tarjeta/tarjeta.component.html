@@ -1,0 +1,206 @@
+<ion-card class="ion-padding color_fondo" *ngIf="tarjetaPc">
+    <ion-card-content>
+        <ion-grid>
+
+            <!-- Información -->
+            <ion-row>
+                <ion-col class="letra_blanca" size="12">
+                    <ion-card-subtitle class="letra_blanca">Dinos tu opinión sobre
+                    </ion-card-subtitle>
+                    <ion-card-title class="letra_blanca">Ironman?</ion-card-title>
+                    <br>
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur illo
+                    voluptas quas
+                    eum consequuntur harum perferendis, iusto, quibusdam sit iste ipsam cum
+                    quasi
+                    libero a
+                    aperiam unde, itaque sunt pariatur!
+                    <br>
+                    <br>
+
+
+                    <u><a href="https://es.wikipedia.org/wiki/Iron_Man" target="_blank">Más información</a></u>
+                    <br>
+                    <br>
+
+                </ion-col>
+            </ion-row>
+
+            <ion-card-title class="letra_blanca"> ¿Cuál es tu voto?</ion-card-title>
+            <br>
+
+            <!-- Botones votación-->
+            <ion-row>
+
+                <ion-col class="alinear_centro botones_votacion like" (click)="votoPositivo()">
+
+
+                    <ion-icon color="light" name="thumbs-up"></ion-icon>
+
+                </ion-col>
+
+                <ion-col class="alinear_centro botones_votacion dislike" (click)="votoNegativo()">
+
+
+                    <ion-icon color="light" name="thumbs-down"></ion-icon>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>
+
+<ion-card class="color_fondo" *ngIf="tarjetaMovil">
+
+    <ion-card-content>
+        <ion-grid class="ion-margin">
+
+            <!-- Información -->
+            <ion-row>
+                <ion-col class="letra_blanca" size="12">
+                    <ion-card-subtitle class="letra_blanca">Dinos tu opinión sobre
+                    </ion-card-subtitle>
+                    <ion-card-title class="letra_blanca">Ironman?</ion-card-title>
+                    <br>
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur illo
+                    voluptas quas
+                    eum consequuntur harum perferendis, iusto, quibusdam sit iste ipsam cum
+                    quasi
+                    libero a
+                    aperiam unde, itaque sunt pariatur!
+                    <br>
+                    <br>
+
+                    <u><a href="https://es.wikipedia.org/wiki/Iron_Man" target="_blank">Más información</a></u>
+                    <br>
+                    <br>
+
+                </ion-col>
+            </ion-row>
+
+            <ion-card-title class="letra_blanca"> ¿Cuál es tu voto?</ion-card-title>
+            <br>
+
+            <!-- Botones votación-->
+            <ion-row>
+
+                <ion-col class="alinear_centro botones_votacion like" (click)="votoPositivo()">
+
+                    <ion-icon color="light" name="thumbs-up"></ion-icon>
+
+                </ion-col>
+
+                <ion-col class="alinear_centro botones_votacion dislike" (click)="votoNegativo()">
+
+
+                    <ion-icon color="light" name="thumbs-down"></ion-icon>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>
+
+<ion-card class="ion-padding color_fondo" *ngIf="tarjetaRespuestaPositiva">
+    <ion-card-content>
+        <ion-grid>
+
+            <!-- Información -->
+
+
+            <ion-row>
+                <ion-col class="ion-padding-bottom letra_blanca" size="12">
+                    <ion-card-title class="letra_blanca">Marvel - Iron Man</ion-card-title>
+                </ion-col>
+            </ion-row>
+
+
+            <ion-row>
+
+                <ion-col size="4" class="alinear_centro like">
+                    <ion-icon class="tamaño_icono" color="light" name="thumbs-up"></ion-icon>
+                </ion-col>
+
+                <ion-col size="8" class="alinear_inicio letra_blanca">
+                    <ion-title>Tu voto</ion-title>
+                    <ion-title>Ha sido registrado!</ion-title>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="ion-padding-top">
+                <ion-col class="letra_blanca">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur illo voluptas quas eum
+                    consequuntur harum perferendis, iusto, quibusdam sit iste ipsam cum quasi libero a aperiam unde,
+                    itaque sunt pariatur!
+                </ion-col>
+            </ion-row>
+
+            <!-- Botones votación-->
+            <ion-row>
+
+                <ion-col (click)="volverAVotar()">
+
+
+                    <ion-button color="dark" expand="full">
+                        Volver a votar
+                    </ion-button>
+
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>
+
+<ion-card class="ion-padding color_fondo" *ngIf="tarjetaRespuestaNegativa">
+    <ion-card-content>
+        <ion-grid>
+
+            <!-- Información -->
+
+
+            <ion-row>
+                <ion-col class="ion-padding-bottom letra_blanca" size="12">
+                    <ion-card-title class="letra_blanca">Marvel - Iron Man</ion-card-title>
+                </ion-col>
+            </ion-row>
+
+
+            <ion-row>
+
+                <ion-col size="4" class="alinear_centro dislike">
+                    <ion-icon class="tamaño_icono" color="light" name="thumbs-down"></ion-icon>
+                </ion-col>
+
+                <ion-col size="8" class="alinear_inicio letra_blanca">
+                    <ion-title>Tu voto</ion-title>
+                    <ion-title>Ha sido registrado!</ion-title>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="ion-padding-top">
+                <ion-col class="letra_blanca">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur illo voluptas quas eum
+                    consequuntur harum perferendis, iusto, quibusdam sit iste ipsam cum quasi libero a aperiam unde,
+                    itaque sunt pariatur!
+                </ion-col>
+            </ion-row>
+
+            <!-- Botones votación-->
+            <ion-row>
+
+                <ion-col (click)="volverAVotar()">
+
+
+                    <ion-button color="dark" expand="full">
+                        Volver a votar
+                    </ion-button>
+
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>

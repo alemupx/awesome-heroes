@@ -1,0 +1,32 @@
+#titulo {
+  display: flex;
+  align-items: center;
+}
+
+ion-toolbar {
+  
+  
+}
+@media (max-width: 1200px) {
+  #lupita {
+    display: none;
+  }
+
+  #chepe {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1200px) {
+  #lupita {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #chepe {
+    display: none;
+  }
+}

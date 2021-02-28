@@ -4,11 +4,11 @@
 }
 
 @media (max-width: 1200px) {
-  #lupita {
+  #botonesNavegacion {
     display: none;
   }
 
-  #chepe {
+  #botonMenu {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -16,13 +16,13 @@
 }
 
 @media (min-width: 1200px) {
-  #lupita {
+  #botonesNavegacion {
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
 
-  #chepe {
+  #botonMenu {
     display: none;
   }
 }

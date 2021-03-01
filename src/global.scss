@@ -34,7 +34,15 @@
 .alinear_inicio {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
+}
+
+.alinear_final {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .letra_blanca {

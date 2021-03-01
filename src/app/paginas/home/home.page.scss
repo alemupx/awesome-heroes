@@ -13,20 +13,30 @@
 }
 
 #pc_container {
-  height: 100%;
+  height: 90vh;
 }
 
 #movil_container {
   flex-direction: column;
 }
 
+.tarjeta_container {
+  display: flex;
+  width: 450px;
+  margin-left: 100px;
+}
+
+.barra_container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
 // Media Queries
 
 @media (min-width: 1200px) {
-  #pc_container {
-    display: flex;
-  }
-
+  #pc_container,
+  #notificacion_pc,
   #tarjetas {
     display: flex;
   }
@@ -36,10 +46,8 @@
   }
 }
 @media (max-width: 1200px) {
-  #pc_container {
-    display: none;
-  }
-
+  #pc_container,
+  #notificacion_pc,
   #tarjetas {
     display: none;
   }

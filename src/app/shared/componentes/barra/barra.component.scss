@@ -1,0 +1,29 @@
+.barra_container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+#barra_pc {
+  display: flex;
+  width: 100vw;
+}
+
+#barra_movil {
+  display: flex;
+  width: fit-content;
+}
+
+#positivos,
+#negativos {
+  font-size: 24px;
+  height: 55px;
+}
+
+#positivos {
+  background-color: #00ada49a;
+}
+
+#negativos {
+  background-color: #ffa2009a;
+}

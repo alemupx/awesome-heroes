@@ -13,15 +13,11 @@
 }
 
 #pc_container {
-  height: 103%;
-}
-
-#movil_container {
   height: 100%;
 }
 
-#container_item {
-  margin-left: 100px;
+#movil_container {
+  flex-direction: column;
 }
 
 // Media Queries
@@ -30,6 +26,11 @@
   #pc_container {
     display: flex;
   }
+
+  #tarjetas {
+    display: flex;
+  }
+
   #movil_container {
     display: none;
   }
@@ -38,6 +39,11 @@
   #pc_container {
     display: none;
   }
+
+  #tarjetas {
+    display: none;
+  }
+
   #movil_container {
     display: flex;
   }

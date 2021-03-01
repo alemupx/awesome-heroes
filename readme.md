@@ -2,10 +2,10 @@
 
 "Awesome Heroes" aplicación web demo para prueba tecnica ExistaYa.com
 
-Relizada en Ionic, Angular. Front End
+Relizada en Ionic, Angular - Front End
 
 
-Firebase. Back End
+Firebase - Back End
 
 ## Uso
 https://awesomeheroes21.web.app/

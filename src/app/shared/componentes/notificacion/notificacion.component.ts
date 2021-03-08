@@ -6,17 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notificacion.component.scss'],
 })
 export class NotificacionComponent implements OnInit {
-  notificacionMovil;
-  notificacionPc;
+  notificacion;
   constructor() {}
 
   ngOnInit() {
-    this.notificacionMovil = document.getElementById('notificacion_movil');
-    this.notificacionPc = document.getElementById('notificacion_pc');
+    this.notificacion = document.getElementById('notificacion');
   }
 
   cerrarNotificacion() {
-    this.notificacionPc.style.display = 'none';
-    this.notificacionMovil.style.display = 'none';
+    this.notificacion.style.display = 'none';
   }
 }

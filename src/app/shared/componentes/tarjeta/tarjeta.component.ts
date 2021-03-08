@@ -9,8 +9,7 @@ import { VotacionesService } from '../../services/votaciones.service';
 export class TarjetaComponent implements OnInit {
   anclaPc: boolean;
   anclaMovil: boolean;
-  @Input() tarjetaPc: boolean;
-  @Input() tarjetaMovil: boolean;
+  @Input() tarjeta: boolean;
   @Input() tarjetaRespuestaPositiva: boolean;
   @Input() tarjetaRespuestaNegativa: boolean;
 
@@ -23,36 +22,22 @@ export class TarjetaComponent implements OnInit {
 
   votoPositivo() {
     if (this.votaciones_service.estadoVotos(true) >= 0.0) {
-      if (this.tarjetaPc) {
-        this.tarjetaPc = false;
+      if (this.tarjeta) {
+        this.tarjeta = false;
         this.tarjetaRespuestaPositiva = true;
         this.votaciones_service.votoPositivo();
         this.anclaPc = true;
-      }
-
-      if (this.tarjetaMovil) {
-        this.tarjetaMovil = false;
-        this.tarjetaRespuestaPositiva = true;
-        this.votaciones_service.votoPositivo();
-        this.anclaMovil = true;
       }
     }
   }
 
   votoNegativo() {
     if (this.votaciones_service.estadoVotos(false) >= 0.0) {
-      if (this.tarjetaPc) {
-        this.tarjetaPc = false;
+      if (this.tarjeta) {
+        this.tarjeta = false;
         this.tarjetaRespuestaNegativa = true;
         this.votaciones_service.votoNegativo();
         this.anclaPc = true;
-      }
-
-      if (this.tarjetaMovil) {
-        this.tarjetaMovil = false;
-        this.tarjetaRespuestaNegativa = true;
-        this.votaciones_service.votoNegativo();
-        this.anclaMovil = true;
       }
     }
   }
@@ -61,11 +46,7 @@ export class TarjetaComponent implements OnInit {
     this.tarjetaRespuestaPositiva = false;
     this.tarjetaRespuestaNegativa = false;
     if (this.anclaPc) {
-      this.tarjetaPc = true;
-    }
-
-    if (this.anclaMovil) {
-      this.tarjetaMovil = true;
+      this.tarjeta = true;
     }
   }
 }

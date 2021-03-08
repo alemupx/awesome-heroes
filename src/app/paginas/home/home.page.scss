@@ -1,58 +1,36 @@
-.pc_container_bg,
-.movil_container_bg {
+.container_bg {
   background-image: url("../../../assets/img/tony.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-#pc_container,
-#movil_container {
-  display: flex;
-  align-items: center;
-}
-
-#pc_container {
-  height: 90vh;
-}
-
-#movil_container {
+  height: 100%;
   flex-direction: column;
 }
 
-.tarjeta_container {
+.tarjeta {
   display: flex;
-  width: 450px;
-  margin-left: 100px;
 }
 
-.barra_container {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-}
+
+
 
 // Media Queries
 
-@media (min-width: 1200px) {
-  #pc_container,
-  #notificacion_pc,
-  #tarjetas {
-    display: flex;
-  }
 
-  #movil_container {
-    display: none;
+@media (min-width: 1200px) {
+
+  .tarjeta {
+    width: 450px;
+    margin: 20px 0px 20px 40px;
   }
 }
-@media (max-width: 1200px) {
-  #pc_container,
-  #notificacion_pc,
-  #tarjetas {
-    display: none;
-  }
 
-  #movil_container {
-    display: flex;
+@media (min-width: 768px) {
+
+
+  .tarjeta {
+    width: 450px;
+    // padding: 0px 60px 0px 60px;
+    padding: 3em;
   }
 }

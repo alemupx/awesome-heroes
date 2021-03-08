@@ -1,0 +1,9 @@
+[
+  {
+    "icon": "help-circle-outline",
+    "name": "Heores anteriores",
+    "redirectTo": "/home"
+  },
+  { "icon": "mail-outline", "name": "¿Cómo funciona?", "redirectTo": "/home" },
+  { "icon": "mail-outline", "name": "Iniciar sesión", "redirectTo": "/home" }
+]

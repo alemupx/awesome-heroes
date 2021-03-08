@@ -1,17 +1,5 @@
-.barra_container {
+#barra {
   display: flex;
-  position: absolute;
-  bottom: 0;
-}
-
-#barra_pc {
-  display: flex;
-  width: 100vw;
-}
-
-#barra_movil {
-  display: flex;
-  width: fit-content;
 }
 
 #positivos,

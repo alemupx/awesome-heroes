@@ -8,10 +8,12 @@ import { ComponentesModule } from './shared/componentes/componentes.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { HttpClientModule } from '@angular/common/http';
 
 const config = {
   apiKey: 'AIzaSyAEhJsCDy29aDnt_d5BdnxQk-T39ciYLwQ',
   authDomain: 'awesomeheroes21.firebaseapp.com',
+  databaseURL: 'https://awesomeheroes21-default-rtdb.firebaseio.com',
   projectId: 'awesomeheroes21',
   storageBucket: 'awesomeheroes21.appspot.com',
   messagingSenderId: '355340201473',
@@ -29,6 +31,7 @@ const config = {
     ComponentesModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
+    HttpClientModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

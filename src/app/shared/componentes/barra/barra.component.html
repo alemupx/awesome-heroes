@@ -1,17 +1,6 @@
-<div *ngIf="pc">
-  <div id="barra_pc" *ngFor="let i of listaVotaciones">
-    <div class="alinear_centro letra_blanca" id="positivos" [style.width.%]="i.votosPositivos*100">{{i.votosPositivos}}
-    </div>
-    <div class="alinear_centro letra_blanca" id="negativos" [style.width.%]="i.votosNegativos*100">{{i.votosNegativos}}
-    </div>
+<div id="barra" *ngFor="let i of listaVotaciones">
+  <div class="alinear_centro letra_blanca" id="positivos" [style.width.%]="i.votosPositivos*100">{{i.votosPositivos}}
   </div>
-</div>
-
-<div id="barra_movil" *ngIf="movil">
-  <div *ngFor="let i of listaVotaciones">
-    <div class="alinear_centro letra_blanca" id="positivos" [style.width.%]="i.votosPositivos*100">{{i.votosPositivos}}
-    </div>
-    <div class="alinear_centro letra_blanca" id="negativos" [style.width.%]="i.votosNegativos*100">{{i.votosNegativos}}
-    </div>
+  <div class="alinear_centro letra_blanca" id="negativos" [style.width.%]="i.votosNegativos*100">{{i.votosNegativos}}
   </div>
 </div>

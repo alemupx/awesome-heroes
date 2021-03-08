@@ -8,8 +8,7 @@ import { VotacionesService } from '../../services/votaciones.service';
   styleUrls: ['./barra.component.scss'],
 })
 export class BarraComponent implements OnInit {
-  @Input() pc: true;
-  @Input() movil: true;
+  @Input() movil;
 
   listaVotaciones: Votaciones[];
 

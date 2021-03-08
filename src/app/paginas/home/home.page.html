@@ -1,65 +1,27 @@
 <ion-content>
 
-    <!-- Header -->
+    <app-header></app-header>
 
-    <div>
-        <app-header></app-header>
-    </div>
+    <ion-grid>
+        <div class="container_bg">
+            <ion-row>
+                <app-tarjeta class="tarjeta" [tarjeta]="true"></app-tarjeta>
+            </ion-row>
 
-    <!-- Contenido -->
-
-    <!-- Versión Pc -->
-    <div id="pc_container" class="pc_container_bg">
-        <div>
-            <div class="tarjeta_container">
-                <app-tarjeta [tarjetaPc]="true"></app-tarjeta>
-            </div>
+            <ion-row>
+                <app-barra style="width: 100%;"></app-barra>
+            </ion-row>
         </div>
-
-        <div class="barra_container">
-            <app-barra [pc]="true"></app-barra>
-
-        </div>
-    </div>
-
-    <app-notificacion id="notificacion_pc"></app-notificacion>
-
-
-    <div id="tarjetas" class="ion-padding-top">
-
-        <app-tarjetas>
-        </app-tarjetas>
-
-    </div>
-
-    <!-- Versión Movil -->
-
-    <div id="movil_container">
-
-        <div class="movil_container_bg">
-
-            <!-- Tarjeta Iron Man -->
-            <div class="ion-padding">
-                <app-tarjeta [tarjetaMovil]="true"></app-tarjeta>
-            </div>
-
-            <!-- Barra Votaciones -->
-            <app-barra [movil]="true"></app-barra>
-
-        </div>
-        <div class="ion-padding-top">
-
+        <ion-row>
             <app-notificacion></app-notificacion>
-
+        </ion-row>
+        <ion-row id="tarjetas">
             <app-tarjetas>
             </app-tarjetas>
+        </ion-row>
+    </ion-grid>
 
-        </div>
-    </div>
 
+    <app-footer></app-footer>
 
-    <!-- Footer -->
-    <div>
-        <app-footer></app-footer>
-    </div>
 </ion-content>

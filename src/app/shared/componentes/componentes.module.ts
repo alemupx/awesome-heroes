@@ -7,6 +7,7 @@ import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { BarraComponent } from './barra/barra.component';
 import { NotificacionComponent } from './notificacion/notificacion.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NotificacionComponent } from './notificacion/notificacion.component';
     TarjetasComponent,
     BarraComponent,
     NotificacionComponent,
+    SidenavComponent,
   ],
   exports: [
     HeaderComponent,
@@ -24,6 +26,7 @@ import { NotificacionComponent } from './notificacion/notificacion.component';
     TarjetasComponent,
     BarraComponent,
     NotificacionComponent,
+    SidenavComponent,
   ],
   imports: [CommonModule, IonicModule],
 })

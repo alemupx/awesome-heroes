@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TarjetasService } from '../../services/tarjetas.service';
+
 import { Tarjeta } from '../../interfaces/tarjeta';
+import { TarjetasService } from '../../services/tarjetas.service';
 
 @Component({
   selector: 'app-tarjetas',

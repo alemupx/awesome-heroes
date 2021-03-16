@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./paginas/home/home.module').then((m) => m.HomePageModule),
   },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./paginas/login/login.module').then((m) => m.LoginPageModule),
+  },
   { path: '**', redirectTo: 'home' },
 ];
 

@@ -8,6 +8,7 @@ import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { BarraComponent } from './barra/barra.component';
 import { NotificacionComponent } from './notificacion/notificacion.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     NotificacionComponent,
     SidenavComponent,
   ],
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, RouterModule],
 })
 export class ComponentesModule {}

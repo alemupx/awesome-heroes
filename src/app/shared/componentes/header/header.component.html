@@ -5,27 +5,21 @@
       <ion-row>
 
         <!-- Título -->
+
         <ion-col size="6" size-md="6" id="titulo">
           <ion-title>Awesome Heroes</ion-title>
         </ion-col>
 
         <!-- Botones Navegación -->
+
         <ion-col size="6" size-md="6" id="botonesNavegacion">
           <div>
             <ion-buttons>
 
-              <ion-button color="secondary">
-                Heores Anteriores
-              </ion-button>
-              <ion-button color="secondary">
-                ¿Cómo funciona?
-              </ion-button>
-              <ion-button color="secondary">
+              <ion-button color="secondary" routerLink="/login">
                 Iniciar Sesión
               </ion-button>
-              <ion-button>
-                <ion-icon slot="icon-only" name="search"></ion-icon>
-              </ion-button>
+
             </ion-buttons>
           </div>
         </ion-col>
@@ -34,9 +28,7 @@
         <ion-col size="6" size-md="6" id="botonMenu">
           <div class="ion-padding">
             <ion-buttons>
-              <ion-button>
-                <ion-icon slot="icon-only" name="search"></ion-icon>
-              </ion-button>
+
               <ion-button (click)="open()">
                 <ion-icon color="secondary" slot="icon-only" name="menu"></ion-icon>
               </ion-button>

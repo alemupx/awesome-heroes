@@ -8,7 +8,7 @@ export class AlertsService {
 
   constructor(public alertController: AlertController, public loadingController: LoadingController) { }
 
-  async alerta(titulo: string, mensaje: string, boton: string = 'Continuar') {
+  async alerta(titulo: string, mensaje: string, boton: string = 'Continue') {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: titulo,
@@ -273,13 +273,10 @@ export class AlertsService {
   async loading() {
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
-      message: 'Estamos organizando cosas, danos un momento por favor...',
+      message: 'We are fixing stuff, wait a bit please...',
       duration: 1500
     });
     await loading.present();
-
-    const { role, data } = await loading.onDidDismiss();
-    console.log('Loading dismissed!');
   }
 
   async loadingOpciones() {

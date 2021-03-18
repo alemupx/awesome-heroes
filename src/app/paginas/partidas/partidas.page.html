@@ -1,5 +1,111 @@
-<app-header title="Partidas"></app-header>
+<app-header title="Games"></app-header>
 
 <ion-content>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="light" class="animate__animated" (click)="log()">
+            <ion-icon color="dark" name="add-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <ion-slides class="slider slide-full" pager="true" [options]="slideOptsFade">
+
+        <ion-slide class="slide_1" *ngFor="let game of gamesList">
+            <ion-grid>
+                <ion-row>
+
+                    <ion-col class="alinear_centro_col letra_blanca" size="12">
+
+                        <ion-card class="animate__animated ion-padding" appTextoAnimado hoverClass="animate__pulse"
+                            style=" background-color: rgba(0, 0, 0, 0.812); ">
+                            <h1 class="letra_blanca">
+                                {{game.name}}</h1>
+
+                            <a id="tiki" class="letra_blanca" target="_tab" style="text-decoration: none;">
+                                View details
+                            </a>
+
+                        </ion-card>
+
+                    </ion-col>
+
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+
+
+    </ion-slides>
+
+
+    <!-- <ion-slides class="slider slide-full" pager="true" [options]="slideOptsFade">
+
+        <ion-slide class="slide_1">
+            <ion-grid>
+                <ion-row>
+
+                    <ion-col class="alinear_centro_col letra_blanca" size="12">
+
+                        <ion-card class="animate__animated ion-padding" appTextoAnimado hoverClass="animate__pulse"
+                            style=" background-color: rgba(0, 0, 0, 0.812); ">
+                            <h1 class="letra_blanca">
+                                Sombras Mordoreñas</h1>
+
+                            <a id="tiki" class="letra_blanca" target="_tab" style="text-decoration: none;">
+                                View details
+                            </a>
+
+                        </ion-card>
+
+                    </ion-col>
+
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+
+        <ion-slide class="slide_2">
+            <ion-grid>
+                <ion-row>
+
+                    <ion-col class="alinear_centro_col letra_blanca" size="12">
+
+                        <ion-card class="animate__animated ion-padding" appTextoAnimado hoverClass="animate__pulse"
+                            style=" background-color: rgba(0, 0, 0, 0.812); ">
+                            <h1 class="letra_blanca">
+                                Sombras Mordoreñas</h1>
+
+                            <a id="tiki" class="letra_blanca" target="_tab" style="text-decoration: none;">
+                                View details
+                            </a>
+
+                        </ion-card>
+
+                    </ion-col>
+
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+
+        <ion-slide class="slide_3">
+            <ion-grid>
+                <ion-row>
+
+                    <ion-col class="alinear_centro_col letra_blanca" size="12">
+
+                        <ion-card class="animate__animated ion-padding" appTextoAnimado hoverClass="animate__pulse"
+                            style=" background-color: rgba(0, 0, 0, 0.812); ">
+                            <h1 class="letra_blanca">
+                                Sombras Mordoreñas</h1>
+
+                            <a id="tiki" class="letra_blanca" target="_tab" style="text-decoration: none;">
+                                View details
+                            </a>
+
+                        </ion-card>
+
+                    </ion-col>
+
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+    </ion-slides> -->
 
 </ion-content>

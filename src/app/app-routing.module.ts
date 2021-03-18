@@ -25,7 +25,14 @@ const routes: Routes = [
       ),
   },
 
+  {
+    path: 'registro',
+    loadChildren: () => import('./paginas/registrar-usuario/registrar-usuario.module').then(m => m.RegistrarUsuarioPageModule)
+  },
+
   { path: '**', redirectTo: 'home' },
+
+
 ];
 
 @NgModule({
@@ -34,4 +41,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

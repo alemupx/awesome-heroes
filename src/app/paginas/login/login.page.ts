@@ -27,22 +27,23 @@ export class LoginPage implements OnInit {
 
   login(formulario: NgForm) {
     if (formulario.invalid) {
+      this.alertService.alerta('What did you expect?', 'You did not write anything');
       return;
     }
 
     this.loginService
       .login(this.usuario)
       .then((data) => {
-        console.log(data);
+
 
         this.alertService.loading().finally(() => {
-          this.alertService.alerta('Bienvenido', 'Nos encanta tenerte por acá de nuevo ' + data.user.displayName);
+          // this.alertService.alerta('Welcome', 'We are glad to see you ' + data.user.displayName);
         })
         this.router.navigateByUrl('/partidas');
         this.dataService.correrVoz(true);
       })
       .catch((error) => {
-        this.alertService.alerta('Error', error);
+        this.alertService.alerta('Error', error.message);
       });
 
   }

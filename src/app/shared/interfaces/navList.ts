@@ -1,5 +1,5 @@
 export interface NavList {
   icon: string;
   name: string;
-  redirectTo: string;
+  redirectTo: string;  
 }

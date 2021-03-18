@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ComponentesModule } from './shared/componentes/componentes.module';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -31,6 +32,7 @@ const config = {
     ComponentesModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
+    AngularFireAuthModule,
     HttpClientModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -1,0 +1,4 @@
+[
+  { "icon": "home", "name": "Home", "redirectTo": "/home" },
+  { "icon": "receipt-outline", "name": "Partidas", "redirectTo": "/partidas" }
+]

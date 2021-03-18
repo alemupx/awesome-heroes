@@ -26,7 +26,7 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
-.alinear_centro_texto{
+.alinear_centro_texto {
   text-align: center;
 }
 
@@ -59,4 +59,8 @@
 
 .letra_blanca {
   color: white;
+}
+
+.divisor {
+  border-top: 1px solid #000000;
 }

@@ -10,6 +10,7 @@ import { NotificacionComponent } from './notificacion/notificacion.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
     BarraComponent,
     NotificacionComponent,
     SidenavComponent,
+
   ],
   exports: [
     HeaderComponent,
@@ -28,7 +30,8 @@ import { RouterModule } from '@angular/router';
     BarraComponent,
     NotificacionComponent,
     SidenavComponent,
+
   ],
   imports: [CommonModule, IonicModule, RouterModule],
 })
-export class ComponentesModule {}
+export class ComponentesModule { }

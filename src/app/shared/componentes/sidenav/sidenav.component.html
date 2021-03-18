@@ -1,17 +1,71 @@
 <ion-menu side="end" menuId="first" [contentId]="main">
+    <ion-content>
+        <ion-list style="margin-top: 20px;" mode="ios">
 
-  <!-- <app-header [nav]="true" no-border></app-header> -->
 
-  <ion-content>
-    <ion-list style="margin-top: 20px;" mode="ios">
-      <ion-item id="item" *ngFor="let c of list | async" (click)="go(c.redirectTo)" class="animate__animated"
-        appTextoAnimado hoverClass="animate__pulse" detail>
+            <div *ngIf="!vozCorrida;then content else other_content">here is ignored</div>
 
-        <div style="display: flex;">
-          <!-- <ion-icon class="ion-padding-horizontal" slot="start" [name]="c.icon"></ion-icon> -->
-          <ion-label color="dark">{{c.name}}</ion-label>
-        </div>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+            <ng-template #content>
+
+                <ion-item id="item" (click)="go('/home')" class="animate__animated" appTextoAnimado
+                    hoverClass="animate__pulse" detail>
+                    <div>
+                        <div style="display: flex;">
+                            <ion-icon class="ion-padding-horizontal" slot="start" name="home"></ion-icon>
+                            <ion-label color="dark">Home</ion-label>
+                        </div>
+                    </div>
+                </ion-item>
+
+                <ion-item id="item" (click)="go('/login')" class="animate__animated" appTextoAnimado
+                    hoverClass="animate__pulse" detail>
+                    <div>
+                        <div style="display: flex;">
+                            <ion-icon class="ion-padding-horizontal" slot="start" name="person-outline"></ion-icon>
+                            <ion-label color="dark">Iniciar sesión</ion-label>
+                        </div>
+                    </div>
+                </ion-item>
+
+            </ng-template>
+
+
+            <ng-template #other_content>
+
+                <ion-item id="item" (click)="go('/home')" class="animate__animated" appTextoAnimado
+                    hoverClass="animate__pulse" detail>
+                    <div>
+                        <div style="display: flex;">
+                            <ion-icon class="ion-padding-horizontal" slot="start" name="home"></ion-icon>
+                            <ion-label color="dark">Home</ion-label>
+                        </div>
+                    </div>
+                </ion-item>
+
+                <ion-item id="item" (click)="go('/partidas')" class="animate__animated" appTextoAnimado
+                    hoverClass="animate__pulse" detail>
+                    <div>
+                        <div style="display: flex;">
+                            <ion-icon class="ion-padding-horizontal" slot="start" name="dice-outline"></ion-icon>
+                            <ion-label color="dark">Partidas</ion-label>
+                        </div>
+                    </div>
+                </ion-item>
+
+
+
+                <ion-item id="item" (click)="logOut()" class="animate__animated" appTextoAnimado
+                    hoverClass="animate__pulse" detail>
+                    <div>
+                        <div style="display: flex;">
+                            <ion-icon class="ion-padding-horizontal" slot="start" name="power-outline"></ion-icon>
+                            <ion-label color="dark">Cerrar sesión</ion-label>
+                        </div>
+                    </div>
+                </ion-item>
+
+            </ng-template>
+
+        </ion-list>
+    </ion-content>
 </ion-menu>

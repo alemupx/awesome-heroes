@@ -7,26 +7,14 @@
         <!-- Título -->
 
         <ion-col size="6" size-md="6" id="titulo">
-          <ion-title>Awesome Heroes</ion-title>
+          <ion-title>{{title}}</ion-title>
         </ion-col>
 
-        <!-- Botones Navegación -->
-
-        <ion-col size="6" size-md="6" id="botonesNavegacion">
-          <div>
-            <ion-buttons>
-
-              <ion-button color="secondary" routerLink="/login">
-                Iniciar Sesión
-              </ion-button>
-
-            </ion-buttons>
-          </div>
-        </ion-col>
 
         <!-- Botón Menú -->
         <ion-col size="6" size-md="6" id="botonMenu">
-          <div class="ion-padding">
+          <div class="ion-padding" style="display: flex;
+          justify-content: flex-end;">
             <ion-buttons>
 
               <ion-button (click)="open()">

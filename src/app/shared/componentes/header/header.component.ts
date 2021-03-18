@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuService } from '../../services/menu.service';
-
 
 @Component({
   selector: 'app-header',
@@ -8,6 +7,8 @@ import { MenuService } from '../../services/menu.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Input() title: string;
+  
   constructor(private menu: MenuService) {}
 
   ngOnInit() {}

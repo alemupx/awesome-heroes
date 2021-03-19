@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NavList } from '../interfaces/navList';
+import { NavList } from '../models/navList.model';
 import { LoginService } from './login.service';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';

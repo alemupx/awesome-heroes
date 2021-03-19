@@ -3,34 +3,52 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { LoggedInAuthGuard } from './shared/guards/loggedInAuth.guard';
 
+
 const routes: Routes = [
   {
     path: 'login',
     canActivate: [LoggedInAuthGuard],
     loadChildren: () =>
-      import('./paginas/login/login.module').then((m) => m.LoginPageModule),
+      import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'home',
     loadChildren: () =>
-      import('./paginas/home/home.module').then((m) => m.HomePageModule),
+      import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
 
   {
-    path: 'partidas',
+    path: 'games',
     canActivate: [AuthGuard],
-    loadChildren: () =>
-      import('./paginas/partidas/partidas.module').then(
-        (m) => m.PartidasPageModule
-      ),
+
+    loadChildren: () => import('./pages/games/games.module').then(m => m.GamesPageModule)
+  },
+
+
+
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
   },
 
   {
-    path: 'registro',
-    loadChildren: () => import('./paginas/registrar-usuario/registrar-usuario.module').then(m => m.RegistrarUsuarioPageModule)
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then(m => m.AccountPageModule)
   },
 
+  {
+    path: 'game/:id',
+    loadChildren: () => import('./pages/game/game.module').then(m => m.GamePageModule)
+  },
+
+  {
+    path: 'player/:id',
+    loadChildren: () => import('./pages/player/player.module').then(m => m.PlayerPageModule)
+  },
   { path: '**', redirectTo: 'home' },
+
+
+
 
 
 ];

@@ -4,12 +4,13 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ComponentesModule } from './shared/componentes/componentes.module';
+
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from './shared/components/components.module';
 
 const config = {
   apiKey: 'AIzaSyAEhJsCDy29aDnt_d5BdnxQk-T39ciYLwQ',
@@ -29,7 +30,7 @@ const config = {
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    ComponentesModule,
+    ComponentsModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule,
@@ -38,4 +39,4 @@ const config = {
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

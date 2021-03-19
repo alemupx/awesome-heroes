@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Usuario } from '../interfaces/usuario';
+import { Usuario } from '../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';

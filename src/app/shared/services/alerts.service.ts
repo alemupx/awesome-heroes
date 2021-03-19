@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AlertController, LoadingController } from '@ionic/angular';
+import { GamesService } from './games.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlertsService {
 
-  constructor(public alertController: AlertController, public loadingController: LoadingController) { }
+  constructor(public alertController: AlertController, public loadingController: LoadingController, private gamesService: GamesService) { }
 
   async alerta(titulo: string, mensaje: string, boton: string = 'Continue') {
     const alert = await this.alertController.create({
@@ -59,78 +60,32 @@ export class AlertsService {
   async alertaPrompt() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Prompt!',
+      header: 'So you want to Create a game, huh...',
       inputs: [
         {
-          name: 'name1',
+          name: 'name',
           type: 'text',
-          placeholder: 'Placeholder 1'
+          placeholder: 'Tell me the Name of the game'
         },
-        {
-          name: 'name2',
-          type: 'text',
-          id: 'name2-id',
-          value: 'hello',
-          placeholder: 'Placeholder 2'
-        },
-        // multiline input.
-        {
-          name: 'paragraph',
-          id: 'paragraph',
-          type: 'textarea',
-          placeholder: 'Placeholder 3'
-        },
-        {
-          name: 'name3',
-          value: 'http://ionicframework.com',
-          type: 'url',
-          placeholder: 'Favorite site ever'
-        },
-        // input date with min & max
-        {
-          name: 'name4',
-          type: 'date',
-          min: '2017-03-01',
-          max: '2018-01-12'
-        },
-        // input date without min nor max
-        {
-          name: 'name5',
-          type: 'date'
-        },
-        {
-          name: 'name6',
-          type: 'number',
-          min: -5,
-          max: 10
-        },
-        {
-          name: 'name7',
-          type: 'number'
-        },
-        {
-          name: 'name8',
-          type: 'password',
-          placeholder: 'Advanced Attributes',
-          cssClass: 'specialClass',
-          attributes: {
-            maxlength: 4,
-            inputmode: 'decimal'
-          }
-        }
+
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Let me out of here',
           role: 'cancel',
-          cssClass: 'secondary',
+          cssClass: 'danger',
           handler: () => {
-            console.log('Confirm Cancel');
+
           }
         }, {
-          text: 'Ok',
-          handler: () => {
-            console.log('Confirm Ok');
+          text: 'Continue',
+          handler: (data) => {
+
+            if (data.name != '') {
+              // this.gamesService.addElementList(data);
+            }
+
+
           }
         }
       ]

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Votaciones } from '../interfaces/votaciones';
+import { Votaciones } from '../models/votaciones.model';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({

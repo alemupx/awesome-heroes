@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuService } from '../../services/menu.service';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-header',
@@ -12,10 +13,10 @@ export class HeaderComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
 
-  constructor(private menu: MenuService, private router: Router) { }
+  constructor(private menu: MenuService, private router: Router, private location: Location) { }
 
   ngOnInit() {
-    
+
 
     if (this.router.url != '/home') {
       this.displayBackButton = true;
@@ -35,5 +36,9 @@ export class HeaderComponent implements OnInit {
 
   close() {
     this.menu.closeMenu();
+  }
+
+  goBack() {
+    this.location.back()
   }
 }

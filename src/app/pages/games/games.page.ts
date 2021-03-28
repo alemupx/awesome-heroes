@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./games.page.scss'],
 })
 export class GamesPage implements OnInit {
+  isLoaded = false;
+
   gamesList: Games[] = [];
 
   constructor(public alertService: AlertsService, private gamesService: GamesService, private router: Router) {
@@ -24,10 +26,30 @@ export class GamesPage implements OnInit {
   }
 
   getGamesList() {
-    this.gamesService.traerListaJuegos().then((data) => {
-      this.gamesList = data;
-    })
+
+    this.gamesService.traerJuegos().subscribe(
+      (response) => {
+        const datosConvertidos = (accion: any) => {
+          return {
+            id: accion.payload.doc.id,
+            ...accion.payload.doc.data(),
+          } as Games;
+        };
+
+        this.gamesList = response.map(datosConvertidos);
+
+        this.isLoaded = true;
+
+
+      },
+
+      (error) => {
+
+      }
+    )
   }
+
+
 
   goTo(data) {
     this.router.navigate(['/game', data]);

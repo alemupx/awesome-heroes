@@ -32,16 +32,15 @@ export class AlertsService {
     await alert.present();
   }
 
-  async alertaConfirmacion() {
+  async alertaConfirmacion(titulo: string, mensaje: string) {
     const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Confirm!',
-      message: 'Message <strong>text</strong>!!!',
+      header: titulo,
+      message: mensaje,
       buttons: [
         {
           text: 'Cancel',
           role: 'cancel',
-          cssClass: 'secondary',
+          cssClass: 'danger',
           handler: (blah) => {
             console.log('Confirm Cancel: blah');
           }
@@ -229,9 +228,13 @@ export class AlertsService {
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'We are fixing stuff, wait a bit please...',
-      duration: 1500
     });
     await loading.present();
+  }
+
+  async loadingOptions(options) {
+    const loading = await this.loadingController.create(options);
+    return await loading;
   }
 
   async loadingOpciones() {

@@ -10,9 +10,8 @@ import { Subject } from 'rxjs';
 })
 export class DataService {
   private corredorVoz = new Subject<any>();
-  private corredorSuplente = false;
 
-  constructor(private http: HttpClient, private auth: LoginService) {}
+  constructor(private http: HttpClient, private auth: LoginService) { }
 
   correrVoz(mensaje: any) {
     this.corredorVoz.next(mensaje);

@@ -51,6 +51,8 @@ export class SidenavComponent implements OnInit {
       this.vozCorrida = vozCorrida;
 
     });
+
+
   }
 
   go(route: string) {
@@ -58,7 +60,7 @@ export class SidenavComponent implements OnInit {
   }
 
   logOut() {
-    this.alertService.loading();
+
     this.dataService.correrVoz(false);
     this.auth.logOut();
     this.menu.goTo('home');

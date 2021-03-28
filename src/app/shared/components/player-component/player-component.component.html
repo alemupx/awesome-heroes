@@ -1,0 +1,35 @@
+<ion-content>
+
+  <div class="container alinear_centro">
+
+    <ion-spinner *ngIf="!isLoaded" name="crescent"></ion-spinner>
+
+    <ion-grid *ngIf="isLoaded">
+      <ion-row>
+
+
+        <ion-col size="12" size-sm="6" class="alinear_centro">
+          <ion-avatar style="width: 300px; height: 300px;">
+            <img [src]="image" />
+          </ion-avatar>
+        </ion-col>
+
+
+        <ion-col size="12" size-sm="6" class="alinear_centro">
+          <ion-card *ngFor="let jugador of playerList" style="width: 300px; background-color: rgba(44, 42, 42, 0.712);">
+            <ion-card-content class="ion-margin">
+              <h1 class="letra_blanca"> <b>{{jugador.nombre}}, {{jugador.clase}}. </b> </h1>
+              <p class="letra_blanca"><b> Vitality:</b> {{jugador.puntosSalud}}ps / 100ps</p>
+              <p class="letra_blanca"><b>Level:</b> {{jugador.nivel}} -
+                {{jugador.puntosExperiencia}}xp / 100.000xp
+              </p>
+              <p class="letra_blanca"> <b> Age:</b> {{jugador.edad}}</p>
+              <p class="letra_blanca">{{jugador.lema}}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

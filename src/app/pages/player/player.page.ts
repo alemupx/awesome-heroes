@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PlayersService } from '../../shared/services/players.service';
 
 @Component({
   selector: 'app-player',
@@ -15,14 +16,8 @@ export class PlayerPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-
       this.id = params['id'];
-      console.log(params);
-
-
     });
-
-
   }
 
 }

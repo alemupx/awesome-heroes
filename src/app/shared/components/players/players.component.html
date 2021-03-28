@@ -1,19 +1,24 @@
 <ion-grid>
   <ion-row>
     <ion-col size="12" size-sm="6" style="display: flex;  justify-content: center;" *ngFor="let jugador of jugadores">
-      <ion-card style="width: 500px;">
-        <ion-card-header class="alinear_centro_col alinear_centro_texto">
-          <ion-avatar>
+      <ion-card style="width: 300px; background-color: rgba(44, 42, 42, 0.712);">
+
+        <ion-card-content class="alinear_centro_col">
+          <ion-avatar class="ion-margin-vertical" style="width: 100px; height: 100px;">
             <img [src]="image">
           </ion-avatar>
-          <ion-card-title>{{jugador.nombre}}</ion-card-title>
-          <ion-card-subtitle>{{jugador.clase}}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content class="alinear_centro_col">
-          <ion-buttons slot="start">
-            <ion-button (click)="verJugador(jugador.id)">
+          <h1 class="letra_blanca">{{jugador.nombre}}</h1>
+          <h2 class="letra_blanca">{{jugador.clase}}</h2>
+
+          <ion-buttons slot="start" class="ion-margin alinear_centro_col">
+            <ion-button (click)="editarJugador(jugador.id)" color="primary">
+              Edit
+            </ion-button>
+            <ion-button (click)="verJugador(jugador.id)" color="secondary">
               See more
             </ion-button>
+            <ion-button (click)="deletePlayer(jugador.id)" color="warning">
+              Kick out </ion-button>
           </ion-buttons>
         </ion-card-content>
       </ion-card>

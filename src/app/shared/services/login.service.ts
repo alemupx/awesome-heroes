@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
+import { AccountService } from './account.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class LoginService {
   private corredorVoz = new Subject<any>();
   userToken: string;
 
-  constructor(private fireAuthService: AngularFireAuth) {
+  constructor(private fireAuthService: AngularFireAuth, private acountService: AccountService) {
     this.leerToken();
   }
 
@@ -24,7 +25,6 @@ export class LoginService {
     );
 
     this.guardarToken(resul.user.uid);
-
     return resul;
   }
 

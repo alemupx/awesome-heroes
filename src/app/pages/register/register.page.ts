@@ -31,6 +31,8 @@ export class RegisterPage implements OnInit {
 
   registro(formulario: NgForm) {
 
+    let idUsuario;
+
     if (formulario.invalid) {
       return;
     }
@@ -38,16 +40,26 @@ export class RegisterPage implements OnInit {
     this.registroService
       .register(this.usuario)
       .then((data) => {
-        this.alertService.loading().finally(() => {
-          console.log(data.user.uid);
 
-          this.alertService.alerta('Congratulations', 'You are enough brave to face this adventure, try to log in now...', 'Yikes!');
-          this.router.navigateByUrl('/home');
+        idUsuario = data.user.uid;
+
+        this.registroService.AgregarEnBaseDatos(idUsuario, formulario.value).then((data) => {
+          console.log(data);
         })
+
+
+
+        // this.router.navigateByUrl('/home').then(() => {
+        //   this.alertService.alerta('Congratulations', 'You are enough brave to face this adventure, try to log in now...', 'Yikes!');
+        // })
       })
       .catch((error) => {
         this.alertService.alerta('Error', error.message);
       });
+
+
+
+
 
   }
 

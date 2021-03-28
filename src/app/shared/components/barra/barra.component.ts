@@ -15,10 +15,12 @@ export class BarraComponent implements OnInit {
   public votosPositivos: number;
   public votosNegativos: number;
   constructor(public votaciones_service: VotacionesService) {
-    this.traerVotaciones();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.traerVotaciones();
+
+  }
 
   traerVotaciones() {
     this.votaciones_service.traerVotaciones().subscribe(

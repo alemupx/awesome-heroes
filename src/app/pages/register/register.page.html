@@ -13,11 +13,16 @@
             <form #formulario="ngForm" (ngSubmit)="registro(formulario)">
 
               <ion-item class="item_element">
+                <ion-input [(ngModel)]="usuario.nombreUsuario" name="nombreUsuario" required type="text" placeholder="Username"
+                  style="font-size: 12px;"></ion-input>
+              </ion-item>
+
+              <ion-item class="item_element" style="margin-top: 5px;">
                 <ion-input [(ngModel)]="usuario.email" name="email" required email type="email" placeholder="Email"
                   style="font-size: 12px;"></ion-input>
               </ion-item>
 
-              <ion-item class="item_element" style="margin-top: 1px;">
+              <ion-item class="item_element" style="margin-top: 5px;">
                 <ion-input [(ngModel)]="usuario.password" (keyup.enter)="registro(formulario)" name="password" required
                   type="password" placeholder="Password" style="font-size: 12px;"></ion-input>
               </ion-item>

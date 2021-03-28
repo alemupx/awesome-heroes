@@ -15,7 +15,7 @@
                                     placeholder="Email" style="font-size: 12px;"></ion-input>
                             </ion-item>
 
-                            <ion-item class="item_element" style="margin-top: 1px;">
+                            <ion-item class="item_element" style="margin-top: 5px;">
 
 
                                 <ion-input [(ngModel)]="usuario.password" (keyup.enter)="login(formulario)"
@@ -35,9 +35,12 @@
                 <div class="ion-margin" class="divisor" style="width: 7%;"></div>
 
                 <p style="font-size: 11px;">Or you could...</p>
-                <ion-button expand="block" shape="round" routerLink="/register">
-                    Create An Account
-                </ion-button>
+
+                    <ion-button expand="block" shape="round" routerLink="/register">
+                        Create An Account
+                    </ion-button>
+
+
             </ion-col>
         </ion-row>
     </ion-grid>

@@ -13,27 +13,6 @@ export class GamesService {
   constructor(private firestore: AngularFirestore) {
   }
 
-  traerListaJuegos() {
-    return new Promise<any>((resolve, reject) => {
-      this.firestore
-        .collection('/partidas')
-        .snapshotChanges()
-        .subscribe(
-          (data) => {
-            const datosConvertidos = (accion: any) => {
-              return {
-                id: accion.payload.doc.id,
-                ...accion.payload.doc.data(),
-              } as Games;
-            };
-
-            resolve(data.map(datosConvertidos));
-          },
-        );
-    });
-  }
-
-
 
   traerJuego(id: any) {
 
@@ -71,7 +50,14 @@ export class GamesService {
     });
   }
 
+  traerJuego2(id) {
+    return this.firestore.collection('/partidas').doc(id).snapshotChanges();
+  }
 
+
+  traerJuegos() {
+    return this.firestore.collection('/partidas').snapshotChanges()
+  }
 
 
 }

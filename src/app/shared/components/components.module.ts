@@ -10,6 +10,13 @@ import { NotificacionComponent } from './notificacion/notificacion.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 import { PlayersComponent } from './players/players.component';
+import { PlayerComponentComponent } from './player-component/player-component.component';
+import { FormComponent } from './form/form.component';
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 
@@ -23,6 +30,9 @@ import { PlayersComponent } from './players/players.component';
     NotificacionComponent,
     SidenavComponent,
     PlayersComponent,
+    PlayerComponentComponent,
+    FormComponent,
+
 
 
   ],
@@ -35,9 +45,13 @@ import { PlayersComponent } from './players/players.component';
     NotificacionComponent,
     SidenavComponent,
     PlayersComponent,
+    PlayerComponentComponent,
+    FormComponent,
+
+
 
 
   ],
-  imports: [CommonModule, IonicModule, RouterModule],
+  imports: [CommonModule, IonicModule, RouterModule, FormsModule, ReactiveFormsModule],
 })
 export class ComponentsModule { }

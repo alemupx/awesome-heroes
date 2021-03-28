@@ -3,20 +3,33 @@
 
 <ion-content>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button color="light" class="animate__animated">
-            <ion-icon color="dark" name="add-outline"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
+  <ion-fab *ngIf="isLoaded" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" class="animate__animated" (click)="goTo(id)">
+      <ion-icon color="dark" name="person-add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-    <div *ngFor="let game of gamesList">
 
-        <h1 class="alinear_centro_texto">{{game.name}}</h1>
+  <div *ngIf="!isLoaded" class="alinear_centro" style="display: flex; justify-content: center; height: 80vh;">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
 
-    </div>
+
+
+
+
+  <div *ngIf="isLoaded">
+    <h1 *ngFor="let game of gamesList" class="alinear_centro_texto">{{game.name}}</h1>
+  </div>
+
+  <div class="alinear_centro_col">
     <h4 class="alinear_centro_texto">Players</h4>
+    <div class=" ion-margin" class="divisor" style="width: 7%;"></div>
+  </div>
 
-    <app-players [id]="id"></app-players>
+  <app-players [id]="id"></app-players>
+
+
 
 
 </ion-content>

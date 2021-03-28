@@ -1,7 +1,10 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button *ngIf="displayBackButton" defaultHref="/"></ion-back-button>
+
+      <ion-button *ngIf="displayBackButton" (click)="goBack()">
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
 
     <ion-grid>
@@ -15,7 +18,7 @@
             {{title}}
 
           </ion-title>
-          <ion-back-button></ion-back-button>
+
         </ion-col>
 
 

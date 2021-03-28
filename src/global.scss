@@ -25,7 +25,6 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-
 .alinear_centro_texto {
   text-align: center;
 }
@@ -63,4 +62,8 @@
 
 .divisor {
   border-top: 1px solid #000000;
+}
+
+.danger {
+  color: danger;
 }

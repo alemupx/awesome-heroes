@@ -33,14 +33,12 @@ export class LoginPage implements OnInit {
 
     this.loginService
       .login(this.usuario)
-      .then((data) => {
+      .then(() => {
 
 
-        this.alertService.loading().finally(() => {
-          // this.alertService.alerta('Welcome', 'We are glad to see you ' + data.user.displayName);
-        })
         this.router.navigateByUrl('/games');
         this.dataService.correrVoz(true);
+
       })
       .catch((error) => {
         this.alertService.alerta('Error', error.message);

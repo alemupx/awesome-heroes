@@ -12,13 +12,7 @@ import { RouterModule } from '@angular/router';
 import { PlayersComponent } from './players/players.component';
 import { PlayerComponentComponent } from './player-component/player-component.component';
 import { FormComponent } from './form/form.component';
-
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -32,9 +26,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PlayersComponent,
     PlayerComponentComponent,
     FormComponent,
-
-
-
   ],
   exports: [
     HeaderComponent,
@@ -47,11 +38,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PlayersComponent,
     PlayerComponentComponent,
     FormComponent,
-
-
-
-
   ],
-  imports: [CommonModule, IonicModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    IonicModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

@@ -12,3 +12,26 @@
   padding: 0;
   width: 300px;
 }
+
+.editar {
+  color: #00ada4;
+  cursor: pointer;
+  display: flex;
+  margin-left: 25%;
+  margin-top: 25%;
+  position: absolute;
+}
+
+#avatar:hover {
+  opacity: 0.1;
+  cursor: pointer;
+
+  .editar {
+    color: #00ada4;
+    cursor: pointer;
+    display: flex;
+    margin-left: 25%;
+    margin-top: 25%;
+    position: absolute;
+  }
+}

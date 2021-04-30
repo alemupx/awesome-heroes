@@ -1,4 +1,6 @@
-<app-header></app-header>
+<app-header title="Edit Player" icon="person-outline"></app-header>
+<!-- <app-header title="Add Player" icon="person-add-outline"></app-header> -->
+
 
 <ion-content>
   <div class="container alinear_centro">
@@ -18,15 +20,36 @@
 
             <ion-card-content class="ion-margin alinear_centro_col">
 
-              <ion-avatar class="ion-margin" style="width: 150px; height: 150px;">
-                <img [src]="image" />
-              </ion-avatar>
+              
+                <div (click)="EditAvatar()">
+                  
 
+                  <ion-avatar  class="ion-margin" style="width: 150px; height: 150px;">
+                    <!-- <h5 class="editar">Edit</h5> -->
+                  <img id="avatar" [src]="image" />
+                </ion-avatar>
+              </div>
+              
 
               <form #formulario="ngForm" (ngSubmit)="EditPlayer(formulario)">
 
-
                 <ion-input style="display: none;" [(ngModel)]="player.id" name="id" type="text"></ion-input>
+
+
+                <ion-item class="item_element" style="margin-top: 5px;">
+                  <ion-label position="floating" color="medium">Health Points</ion-label>
+                  <ion-input [(ngModel)]="player.puntosSalud" name="puntosSalud" type="text" value="100">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item class="item_element" style="margin-top: 5px;">
+                  <ion-label position="floating" color="medium">Experience Points</ion-label>
+                  <ion-input [(ngModel)]="player.puntosExperiencia" name="puntosExperiencia" type="text" value="0">
+                  </ion-input>
+                </ion-item>
+
+
+
 
                 <!-- Tipo componente, -->
                 <ion-item class="item_element" style="margin-top: 5px;">
@@ -59,11 +82,10 @@
                   <ion-textarea [(ngModel)]="player.lema" name="lema"></ion-textarea>
                 </ion-item>
 
-                <ion-input style="display: none;" [(ngModel)]="player.puntosSalud" name="puntosSalud" type="text"
-                  value="100">
-                </ion-input>
-                <ion-input style="display: none;" [(ngModel)]="player.puntosExperiencia" name="puntosExperiencia"
-                  type="text" value="0"></ion-input>
+
+
+
+
                 <ion-input style="display: none;" [(ngModel)]="player.nivel" name="nivel" type="text" value="1">
                 </ion-input>
 

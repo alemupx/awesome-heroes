@@ -22,7 +22,7 @@
     <h1 *ngFor="let game of gamesList" class="alinear_centro_texto">{{game.name}}</h1>
   </div>
 
-  <div class="alinear_centro_col">
+  <div *ngIf="isLoaded" class="alinear_centro_col">
     <h4 class="alinear_centro_texto">Players</h4>
     <div class=" ion-margin" class="divisor" style="width: 7%;"></div>
   </div>

@@ -14,8 +14,11 @@ export class GamesPage implements OnInit {
 
   gamesList: Games[] = [];
 
-  constructor(public alertService: AlertsService, private gamesService: GamesService, private router: Router) {
-  }
+  constructor(
+    public alertService: AlertsService,
+    private gamesService: GamesService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.getGamesList();
@@ -26,7 +29,6 @@ export class GamesPage implements OnInit {
   }
 
   getGamesList() {
-
     this.gamesService.traerJuegos().subscribe(
       (response) => {
         const datosConvertidos = (accion: any) => {
@@ -39,21 +41,13 @@ export class GamesPage implements OnInit {
         this.gamesList = response.map(datosConvertidos);
 
         this.isLoaded = true;
-
-
       },
 
-      (error) => {
-
-      }
-    )
+      (error) => {}
+    );
   }
-
-
 
   goTo(data) {
     this.router.navigate(['/game', data]);
   }
-
-
 }

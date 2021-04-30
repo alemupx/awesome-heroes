@@ -1,46 +1,35 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button *ngIf="displayBackButton" (click)="goBack()">
+                <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
 
-      <ion-button *ngIf="displayBackButton" (click)="goBack()">
-        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+        <ion-grid>
+            <ion-row>
+                <!-- Título -->
 
-    <ion-grid>
-      <ion-row>
+                <ion-col size="6" size-md="6" id="titulo">
+                    <ion-title>
+                        <ion-icon style="margin-right: 5px" *ngIf="icon" [name]="icon"></ion-icon>
+                        {{ title }}
+                    </ion-title>
+                </ion-col>
 
-        <!-- Título -->
+                <ion-col size="6"> </ion-col>
 
-        <ion-col size="6" size-md="6" id="titulo">
-          <ion-title>
-            <ion-icon style="margin-right: 5px;" *ngIf="icon" [name]="icon"></ion-icon>
-            {{title}}
-
-          </ion-title>
-
-        </ion-col>
-
-
-
-        <!-- Botón Menú -->
-        <ion-col size="6" size-md="6" id="botonMenu">
-          <div class="ion-padding" style="display: flex;
-          justify-content: flex-end;">
-            <ion-buttons>
-
-              <ion-button (click)="open()">
-                <ion-icon color="secondary" slot="icon-only" name="menu"></ion-icon>
-              </ion-button>
-
-            </ion-buttons>
-          </div>
-
-        </ion-col>
-
-      </ion-row>
-    </ion-grid>
-
-  </ion-toolbar>
-
+                <!-- Botón Menú -->
+                <ion-col size="6" size-md="6" id="botonMenu">
+                    <div class="ion-padding" style="display: flex; justify-content: flex-end">
+                        <ion-buttons>
+                            <ion-button (click)="open()">
+                                <ion-icon color="secondary" slot="icon-only" name="menu"></ion-icon>
+                            </ion-button>
+                        </ion-buttons>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
 </ion-header>

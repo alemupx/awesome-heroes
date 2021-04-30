@@ -3,9 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { LoggedInAuthGuard } from './shared/guards/loggedInAuth.guard';
 
-
 const routes: Routes = [
-
   {
     path: 'home',
     loadChildren: () =>
@@ -15,7 +13,10 @@ const routes: Routes = [
   {
     path: 'register',
     canActivate: [LoggedInAuthGuard],
-    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
+    loadChildren: () =>
+      import('./pages/register/register.module').then(
+        (m) => m.RegisterPageModule
+      ),
   },
 
   {
@@ -28,49 +29,57 @@ const routes: Routes = [
   {
     path: 'account',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/account/account.module').then(m => m.AccountPageModule)
+    loadChildren: () =>
+      import('./pages/account/account.module').then((m) => m.AccountPageModule),
   },
 
   {
     path: 'games',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/games/games.module').then(m => m.GamesPageModule)
+    loadChildren: () =>
+      import('./pages/games/games.module').then((m) => m.GamesPageModule),
   },
 
   {
     path: 'game/:id',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/game/game.module').then(m => m.GamePageModule)
+    loadChildren: () =>
+      import('./pages/game/game.module').then((m) => m.GamePageModule),
   },
 
   {
     path: 'player/:id',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/player/player.module').then(m => m.PlayerPageModule)
+    loadChildren: () =>
+      import('./pages/player/player.module').then((m) => m.PlayerPageModule),
   },
-
 
   {
     path: 'add-player/:id',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/player-add/player-add.module').then(m => m.PlayerAddPageModule)
+    loadChildren: () =>
+      import('./pages/player-add/player-add.module').then(
+        (m) => m.PlayerAddPageModule
+      ),
   },
 
   {
     path: 'edit-player/:id',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/player-edit/player-edit.module').then(m => m.PlayerEditPageModule)
+    loadChildren: () =>
+      import('./pages/player-edit/player-edit.module').then(
+        (m) => m.PlayerEditPageModule
+      ),
   },
 
   {
     path: 'forms/:id',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./pages/forms/forms.module').then(m => m.FormsPageModule)
+    loadChildren: () =>
+      import('./pages/forms/forms.module').then((m) => m.FormsPageModule),
   },
 
   { path: '**', redirectTo: 'home' },
-
-
 ];
 
 @NgModule({
@@ -79,4 +88,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

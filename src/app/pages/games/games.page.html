@@ -1,30 +1,32 @@
-<app-header title="Games" icon="game-controller-outline">
-</app-header>
+<app-header title="Games" icon="game-controller-outline"> </app-header>
 
 <ion-content>
-
-
-
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="light" class="animate__animated" (click)="log()">
       <ion-icon color="dark" name="duplicate-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <div *ngIf="!isLoaded" class="alinear_centro" style="display: flex; justify-content: center; height: 80vh;">
+  <div
+    *ngIf="!isLoaded"
+    class="alinear_centro"
+    style="display: flex; justify-content: center; height: 80vh"
+  >
     <ion-spinner name="crescent"></ion-spinner>
   </div>
-
 
   <ion-list>
     <ion-item-sliding *ngFor="let game of gamesList">
       <ion-item>
-        <ion-button (click)="goTo(game.id)" expand="block" fill="clear" shape="round">
+        <ion-button
+          (click)="goTo(game.id)"
+          expand="block"
+          fill="clear"
+          shape="round"
+        >
           {{game.name}}
         </ion-button>
       </ion-item>
     </ion-item-sliding>
   </ion-list>
-
-
 </ion-content>

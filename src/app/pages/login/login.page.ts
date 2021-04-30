@@ -12,14 +12,16 @@ import { AlertsService } from 'src/app/shared/services/alerts.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  isLoaded = false;
+
   usuario: Usuario;
 
   constructor(
     private loginService: LoginService,
     private router: Router,
     private dataService: DataService,
-    private alertService: AlertsService,
-  ) { }
+    private alertService: AlertsService
+  ) {}
 
   ngOnInit() {
     this.usuario = new Usuario();
@@ -27,22 +29,21 @@ export class LoginPage implements OnInit {
 
   login(formulario: NgForm) {
     if (formulario.invalid) {
-      this.alertService.alerta('What did you expect?', 'You did not write anything');
+      this.alertService.alerta(
+        'What did you expect?',
+        'You did not write anything'
+      );
       return;
     }
 
     this.loginService
       .login(this.usuario)
       .then(() => {
-
-
         this.router.navigateByUrl('/games');
         this.dataService.correrVoz(true);
-
       })
       .catch((error) => {
         this.alertService.alerta('Error', error.message);
       });
-
   }
 }

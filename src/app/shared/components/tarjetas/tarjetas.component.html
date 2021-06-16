@@ -1,20 +1,21 @@
 <ion-grid>
   <ion-row>
-    <ion-col *ngFor="let tarjeta of tarjetas" size="12" size-lg="6">
+    <ion-col *ngFor="let tarjeta of tarjetas" size="12" size-lg="3">
       <ion-card class="color_fondo">
         <ion-card-content class="ion-padding">
           <ion-row>
             <ion-col class="ion-padding" size="12">
-              <ion-img [src]="tarjeta.url" style="height: 400px;"></ion-img>
+              <ion-img [src]="tarjeta.url" style="height: 400px"></ion-img>
             </ion-col>
             <ion-col size="12">
-              <h1 class="letra_blanca" style="font-size: 26px;">{{tarjeta.titulo}}</h1>
+              <h1 class="letra_blanca" style="font-size: 26px">
+                {{ tarjeta.titulo }}
+              </h1>
             </ion-col>
             <ion-col size="12">
-              <div class="letra_blanca">{{tarjeta.contenido}}</div>
+              <div class="letra_blanca">{{ tarjeta.contenido }}</div>
             </ion-col>
           </ion-row>
-
 
           <ion-row>
             <ion-col class="alinear_inicio" size="8">
@@ -23,14 +24,15 @@
               </ion-button>
             </ion-col>
             <ion-col class="alinear_final" size="4">
-              <div class="letra_blanca" style="font-size: 12px;">A month ago in lorem dolor</div>
+              <div class="letra_blanca" style="font-size: 12px">
+                A month ago in lorem dolor
+              </div>
             </ion-col>
           </ion-row>
 
           <ion-row>
             <!-- <app-barra [movil]="true"></app-barra> -->
           </ion-row>
-
         </ion-card-content>
       </ion-card>
     </ion-col>

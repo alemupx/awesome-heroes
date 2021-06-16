@@ -14,43 +14,36 @@ export class GamePage implements OnInit {
   gamesList: Games[];
   id;
 
-
-
-  constructor(private activatedRoute: ActivatedRoute, private gameService: GamesService, private router: Router) {
-
-  }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private gameService: GamesService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe((params) => {
       this.id = params['id'];
 
       this.gameService.traerJuego(this.id).then((data) => {
         this.gamesList = data;
-      })
+      });
 
-      this.gameService.traerJuego2(this.id).subscribe(
-        (response) => {
-          const game = {
-            id: response.payload.id,
-            ...response.payload.data() as Games
-          }
+      this.gameService.traerJuego2(this.id).subscribe((response) => {
+        const game = {
+          id: response.payload.id,
+          ...(response.payload.data() as Games),
+        };
 
-          let tempList: Games[] = [game];
+        let tempList: Games[] = [game];
 
-          this.gamesList = tempList;
+        this.gamesList = tempList;
 
-          this.isLoaded = true;
-
-        },
-      )
-
+        this.isLoaded = true;
+      });
     });
   }
 
   goTo(data) {
     this.router.navigate(['/add-player', data]);
-
   }
-
-
 }
